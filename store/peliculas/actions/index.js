@@ -2,21 +2,21 @@ import types from './types';
 
 //get
 export const getPeliculas = (payload) => ({
-  type: types.GET_CARGO_SIZES,
+  type: types.GET_PELICULAS,
   payload
 });
 
 export const getPeliculasRequest = () => ({
-  type: types.GET_CARGO_SIZES_REQUEST
+  type: types.GET_PELICULAS_REQUEST
 });
 
 export const getPeliculasSuccess = (payload) => ({
-  type: types.GET_CARGO_SIZES_SUCCESS,
+  type: types.GET_PELICULAS_SUCCESS,
   payload
 });
 
 export const getPeliculasFailure = (payload) => ({
-  type: types.GET_CARGO_SIZES_FAILURE,
+  type: types.GET_PELICULAS_FAILURE,
   payload
 });
 

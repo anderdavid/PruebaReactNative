@@ -1,6 +1,6 @@
 export const API_URL = process.env.REACT_APP_API_URL;
 
-export const PAGINATION = {
+ export const PAGINATION = {
   results: [],
   pages: 0,
   current: 0,
@@ -14,7 +14,7 @@ export const REQUEST_STATUSES = {
   LOADED: 'loaded',
   FAILED: 'failed'
 };
-
+/*
 export const REGEX = {
   EMAIL: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
   PASSWORD: /^(?=.*[0-9])(?=.*[A-zñ!@#$%^&*])([A-z0-9ñ!@#$%^&*]+)$/,
@@ -68,4 +68,4 @@ export const IMAGES = {
   vesselStowage: require('../assets/images/vessel-stowage.svg')
 };
 
-export const LOGIN_SLIDES = [IMAGES.cover1, IMAGES.cover2, IMAGES.cover3];
+export const LOGIN_SLIDES = [IMAGES.cover1, IMAGES.cover2, IMAGES.cover3]; */
