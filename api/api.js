@@ -3,7 +3,7 @@ import { API_URL } from '../utils/constants';
 import { getLocalStorage } from '../utils/helpers';
 
 const api = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: `http://www.omdbapi.com/?s=love&y=2020&apikey=5eec5adc`,
   timeout: 30000
 });
 
