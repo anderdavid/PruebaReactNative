@@ -1,10 +1,12 @@
 import React,{ useEffect, useState } from 'react';
 import { StyleSheet, Text, View,FlatList } from 'react-native'
 import Header from '../header';
+import TodoItem from '../todoItem';
 
 const Peliculas =(props)=>{
   const {
       status,
+      peliculas,
       getPeliculas
     } = props;
 
@@ -12,25 +14,21 @@ const Peliculas =(props)=>{
       getPeliculas();
     }, []);
 
-    const [todos,setTodos]=useState([
-      {text:'buy coffe',key:'1'},
-      {text:'create an app',key:'2'},
-      {text:'play on the switch',key:'3'}
-    ]);
-
     return (
         <View style={styles.container}>
-          {/* Header */}
+          
           <Header/>
           <View style={styles.content}>
-            {/* To Form */}
-            <View style={styles.list}>
-              <FlatList
-                data={todos}
+          
+           <View style={styles.list}>
+             {status==='loaded' &&(
+               <FlatList
+                data={peliculas?.Search}
                 renderItem={({item})=>(
-                  <Text>{item.text}</Text>
-                )}
-              />
+                <TodoItem item={item}/>
+               )}
+             />
+             )}
             </View>
           </View>
         </View>
