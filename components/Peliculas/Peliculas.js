@@ -14,12 +14,7 @@ const Peliculas =(props)=>{
     useEffect(() => {
       console.log('useEffect()');
       getPeliculas();
-      /* if(props.status ==='loaded'){
-        console.log('loaded');
-      }else{
-        console.log('loading...');
-        getPeliculas();
-      } */
+      
     }, []);
 
     
@@ -27,7 +22,7 @@ const Peliculas =(props)=>{
     return (
         
         <View>
-         {/*  <Text>{JSON.stringify(peliculas)}</Text> */}
+          <Header/>
          {peliculas&&(
            <List peliculas={peliculas.Search}/>
          )}

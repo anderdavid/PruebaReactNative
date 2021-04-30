@@ -10,8 +10,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <Text style={styles.algo}>algo</Text>
-        <Peliculas/>
+       <Peliculas/>
       </View>
     </Provider>
     
@@ -21,7 +20,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#860528',
   },
   algo:{
     marginTop:30,
