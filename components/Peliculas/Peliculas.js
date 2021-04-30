@@ -2,6 +2,7 @@ import React,{ useEffect, useState } from 'react';
 import { StyleSheet, Text, View,FlatList } from 'react-native'
 import Header from '../header';
 import TodoItem from '../todoItem';
+import List from '../list';
 
 const Peliculas =(props)=>{
   const {
@@ -12,42 +13,26 @@ const Peliculas =(props)=>{
 
     useEffect(() => {
       console.log('useEffect()');
-      if(props.status ==='loaded'){
+      getPeliculas();
+      /* if(props.status ==='loaded'){
         console.log('loaded');
       }else{
         console.log('loading...');
         getPeliculas();
-      }
+      } */
     }, []);
 
-    return (
-        <View style={styles.container}>
-          
-          <Header/>
-          <View style={styles.content}>
-            
-           <View style={styles.list}>
-             <Text>{status}</Text>
-             {status==='loaded'&&(
-               <View>
-                  <Text>Loaddddded</Text>
+    
 
-                  {peliculas.Search &&(
-                    <>
-                      {peliculas.Search.map(
-                        (item,i)=>(
-                          <Text key={i}>{item.Title}</Text>
-                        )
-                      )}
-                    </>
-                  )}
-                 
-               </View>
-              )}
+    return (
+        
+        <View>
+         {/*  <Text>{JSON.stringify(peliculas)}</Text> */}
+         {peliculas&&(
+           <List peliculas={peliculas.Search}/>
+         )}
           
-            </View>
-          </View>
-        </View>
+        </View> 
     )
 }
 

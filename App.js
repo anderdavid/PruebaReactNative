@@ -9,8 +9,9 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <Provider store={store}>
-      <View>
-       <Peliculas/>
+      <View style={styles.container}>
+        <Text style={styles.algo}>algo</Text>
+        <Peliculas/>
       </View>
     </Provider>
     
@@ -22,4 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:'#860528',
   },
+  algo:{
+    marginTop:30,
+  }
 });
