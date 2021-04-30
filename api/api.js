@@ -11,16 +11,17 @@ api.interceptors.request.use(
   async (config) => {
     // Do something before request is sent
     try {
-      let session = await getLocalStorage('session');
+     /*  let session = await getLocalStorage('session');
 
       if (session) {
         session = JSON.parse(session);
         config.headers['Authorization'] = `Bearer ${session.token}`;
-      }
+      } */
       return config;
     } catch (error) {
       return error;
     }
+    
   },
   function (error) {
     return Promise.reject(error);

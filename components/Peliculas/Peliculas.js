@@ -11,7 +11,13 @@ const Peliculas =(props)=>{
     } = props;
 
     useEffect(() => {
-      getPeliculas();
+      console.log('useEffect()');
+      if(props.status ==='loaded'){
+        console.log('loaded');
+      }else{
+        console.log('loading...');
+        getPeliculas();
+      }
     }, []);
 
     return (
@@ -19,16 +25,26 @@ const Peliculas =(props)=>{
           
           <Header/>
           <View style={styles.content}>
-          
+            
            <View style={styles.list}>
-             {status==='loaded' &&(
-               <FlatList
-                data={peliculas?.Search}
-                renderItem={({item})=>(
-                <TodoItem item={item}/>
-               )}
-             />
-             )}
+             <Text>{status}</Text>
+             {status==='loaded'&&(
+               <View>
+                  <Text>Loaddddded</Text>
+
+                  {peliculas.Search &&(
+                    <>
+                      {peliculas.Search.map(
+                        (item,i)=>(
+                          <Text key={i}>{item.Title}</Text>
+                        )
+                      )}
+                    </>
+                  )}
+                 
+               </View>
+              )}
+          
             </View>
           </View>
         </View>
