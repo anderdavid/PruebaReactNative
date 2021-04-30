@@ -13,7 +13,11 @@ const Peliculas =(props)=>{
 
     useEffect(() => {
       console.log('useEffect()');
-      getPeliculas();
+      getPeliculas({
+        s:'love',
+        y:'2020',
+        apikey:'5eec5adc'
+      });
       
     }, []);
 
@@ -23,10 +27,9 @@ const Peliculas =(props)=>{
         
         <View>
           <Header/>
-         {peliculas&&(
-           <List peliculas={peliculas.Search}/>
-         )}
-          
+          {peliculas&&(
+            <List peliculas={peliculas.Search}/>
+          )}
         </View> 
     )
 }
